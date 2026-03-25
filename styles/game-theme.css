@@ -1,0 +1,133 @@
+/* Game Theme Colors - Space Adventure / RPG */
+:root {
+  /* Neon Game Colors */
+  --neon-blue: #00d4ff;
+  --neon-purple: #b000ff;
+  --neon-pink: #ff006e;
+  --neon-cyan: #00ffff;
+  --space-dark: #0a0a0f;
+  --space-darker: #05050a;
+  --glow-blue: rgba(0, 212, 255, 0.5);
+  --glow-purple: rgba(176, 0, 255, 0.5);
+  --glow-pink: rgba(255, 0, 110, 0.5);
+}
+
+/* Global styles */
+* {
+  cursor: none !important; /* Hide default cursor for custom cursor effect */
+}
+
+@media (max-width: 768px) {
+  * {
+    cursor: auto !important; /* Show default cursor on mobile */
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism effect */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 20px var(--glow-blue), 0 0 40px var(--glow-blue);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px var(--glow-purple), 0 0 40px var(--glow-purple);
+}
+
+.glow-pink {
+  box-shadow: 0 0 20px var(--glow-pink), 0 0 40px var(--glow-pink);
+}
+
+/* Text glow */
+.text-glow-blue {
+  text-shadow: 0 0 10px var(--glow-blue), 0 0 20px var(--glow-blue);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 10px var(--glow-purple), 0 0 20px var(--glow-purple);
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 10px var(--glow-pink), 0 0 20px var(--glow-pink);
+}
+
+/* XP Bar Animation */
+@keyframes fill-xp {
+  from {
+    width: 0%;
+  }
+  to {
+    width: var(--xp-width);
+  }
+}
+
+.xp-bar-fill {
+  animation: fill-xp 1.5s ease-out forwards;
+}
+
+/* Particle background */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.6;
+  animation: float 20s infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-40px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-20px) translateX(10px);
+  }
+}
+
+/* Level unlock animation */
+@keyframes level-unlock {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.level-unlock {
+  animation: level-unlock 0.5s ease-out;
+}
+
+/* Pulse animation for locked levels */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
